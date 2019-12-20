@@ -1,0 +1,39 @@
+{% extends "templates/public_template.html" %}
+
+<!-- {% block title %} Index {% endblock %} -->
+{% block main %}
+
+<div class="container">
+    <!-- <img src="../static/logo.png" alt="Este seria un logo" class="logo"> -->
+    <h2>Analisis de texto</h2>
+
+    <!-- Mensaje de advertencia en caso que falten datos -->
+    {% if message %}
+        <p class="message">{{ message | safe }}</p>
+    {% endif %}
+
+    <form action="/input" method="POST" >
+
+        <div class="form-group">
+            <h3>Usuario</h3>
+            <!-- Nombre de usuario. Este dato es solo un detalle, no interfiere en el proceso -->
+            <!-- Por cuestion de atencion se pide obligatoriamente el nombre -->
+            <input type="text" name="usuario" placeholder="Indique su nombre por favor">
+        </div>
+        
+        <div class="form-group">
+            <h3>Indique como desea introducir texto</h3>
+            <!-- El analisis de texto se puede realizar sobre tetxto desde el clipboard o desde archivo .txt -->
+            <label for="textoR">Pegar texto desde clipboard</label>
+            <input type="radio" name="tipoAnalisis" value="texto" id="textoR" checked="checked">
+            <br />
+            <label for="archivoR">Subir un archivo para Analizar</label>
+            <input type="radio" name="tipoAnalisis" value="archivo" id="archivoR">
+        </div>
+
+        <input type="submit" value="Aceptar" class="btn" />
+
+    </form>    
+</div>
+
+{% endblock %}

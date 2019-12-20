@@ -1,0 +1,32 @@
+{% extends "templates/public_template.html" %}
+
+{% block main %}
+
+<div class="container">
+
+    <form action="/proced" method="POST" enctype="multipart/form-data">
+        
+        <h3>Bienvenido {{ usuario | safe }}</h3>
+            
+        <div class="form-group">
+            <h3>El tipo de accion elejido fue {{ tipoAnalisis | safe }}</h3>
+        </div>
+
+        {% if  tipoAnalisis == 'texto' %}
+            <div class="from-group">
+                <h3>Introducir texto</h3>
+                <textarea name="texto" id="texto" cols="30" rows="10" placeholder="Introducir texto para analisis"></textarea>
+            </div>
+        {% endif %}
+        {% if tipoAnalisis == 'archivo' %}
+            <div class="form-group">
+                <label for="selecArch">Seleccionar archivo ...</label>
+                <input type="file" name="archivo" id="selecArch" class="custom-file-input">
+            </div>            
+        {% endif %}
+        <input type="radio" name="choise" value="{{ tipoAnalisis }}" checked="checked" style="display:none;">
+        <button type="submit" class="btn">Analizar</button>
+
+    </form>
+    </div>
+{% endblock %}
