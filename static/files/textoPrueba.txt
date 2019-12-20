@@ -1,0 +1,4 @@
+Estos es un archivo .txt que contiene un texto de prueba
+Esta es la segunda linea del texto de prueba
+Esta es la tercera linea del texto de prueba
+Esta linea fue editada
