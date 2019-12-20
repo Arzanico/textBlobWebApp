@@ -1,4 +1,4 @@
-#!/home/nico/Documents/proyectoFlask/v2/env/bin py
+#!/usr/bin/env py
 
 from flask import Flask, request, render_template, redirect
 from textblob import TextBlob
