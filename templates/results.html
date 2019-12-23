@@ -5,8 +5,23 @@
 <h1> Resultados de la evaluacion </h1>
 
 <div class="container results">
-    {{ resultados | safe }}
+    <table >
+        <tr>
+        <th>Palabra</th>
+        <th>Funcion</th>
+        </tr>
+    {% for a in resultados %}
+        <tr>
+        <td>{{ a[0] }}</td>
+        <td>{{ a[1] }}</td>
+        </tr> 
+    {% endfor %}
+    </table>
 </div>
 
 
 {% endblock %}
+
+
+
+
