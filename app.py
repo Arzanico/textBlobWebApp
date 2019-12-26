@@ -46,11 +46,11 @@ def proced():
                     text = normalize('NFC', text)
 
                 return text
-
-        #Uso a funcion para simplificar la llamada a la libreria TextBlob            
+            
+        #Atraves de una funcion resulevo la entrada de texto, desde porta papeles o desde archivo
         texto = giveMeText(elecc)
-        # Llamo a la mi clase donde imlemento la libreria TextBlob
-        # en mi clase tengo los metodos de la libreria definidos como atributos del texto
+        # Cree una clase donde implemento los metodos de la libreria TextBlob como atributos
+        # la idea de la clase reducir el codigo presente en este archivo y simplificar el funcionamiento
         obText = BlobText(texto,2)
         tags = obText.tags
         gramas = obText.ngramas
