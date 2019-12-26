@@ -3,20 +3,54 @@
 {% block main %}
 
 <h1> Resultados de la evaluacion </h1>
+<div class="container">
+    
+    <div class="container results">
+        <h3>Sentiment</h3>
+        <table >
+            <tr>
+                <th>Texto</th>
+                <th>Polaridad</th>
+                <th>Subjetividad</th>
+            </tr>
+            <tr>
+                <td>{{ text }}</td>
+                <td>{{ sentiment.polarity }}</td>
+                <td>{{ sentiment.subjectivity }}</td>
+            </tr>
+        </table>  
 
-<div class="container results">
-    <table >
-        <tr>
-        <th>Palabra</th>
-        <th>Funcion</th>
-        </tr>
-    {% for a in resultados %}
-        <tr>
-        <td>{{ a[0] }}</td>
-        <td>{{ a[1] }}</td>
-        </tr> 
-    {% endfor %}
-    </table>
+    </div>
+    <div class="container results">
+        <h3>Funciones linguisticas</h3>
+        <table >
+            <tr>
+            <th>Palabra</th>
+            <th>Tag</th>
+            <th>Funcion</th>
+            </tr>
+        {% for a in tags %}
+            <tr>
+            <td>{{ a[0] }}</td>
+            <td>{{ a[1] }}</td>
+            <td>{{ tagDict[a[1]] }}</td>
+            </tr> 
+        {% endfor %}
+        </table>
+    </div>
+    <div class="container results">
+        <h3>Gramas</h3>
+        <table >
+            <tr>
+                <th>bi gramas</th>
+            </tr>
+        {% for a in gramas %}
+            <tr>
+                <td>{{ a }}</td>
+            </tr> 
+        {% endfor %}
+        </table>
+    </div>
 </div>
 
 
