@@ -1,7 +1,5 @@
-#!/usr/bin/env py
-
 from flask import Flask, request, render_template, redirect
-from textblob import TextBlob
+from clases.analisisLib import BlobText
 import os
 from unicodedata import normalize
 
@@ -51,12 +49,12 @@ def proced():
 
         #Uso a funcion para simplificar la llamada a la libreria TextBlob            
         texto = giveMeText(elecc)
-        #Instancia de la clase TextBlob
-        txBlob = TextBlob(texto)
-        #La clase aun no funciona con el español, pero lo que hace el metodo es identificar funcion liguistica
-        resultados = txBlob.tags
-
-        return render_template('results.html' , resultados = resultados)
+        # Llamo a la mi clase donde imlemento la libreria TextBlob
+        # en mi clase tengo los metodos de la libreria definidos como atributos del texto
+        obText = BlobText(texto,2)
+        tags = obText.tags
+        gramas = obText.ngramas
+        return render_template('results.html' , tags = tags , text = texto, gramas = gramas)
 
 
 @app.route('/volver', methods=['POST'])
