@@ -3,7 +3,7 @@ from textblob import TextBlob
 # words ; sentences ; word_counts['word'] ; .translate(to='es') ; .detect_language()
 # .ngrams(n=3) ;
 
-#Descripcion de los tags
+#Descripcion de los tags que nos devuelve la libreria TextBlob cuando aplicamos el metodo .tags
 # tagDict = {
 #     'CC':'coordinating', #conjunction 	and
 #     'CD':'cardinal', #number 	1, third
