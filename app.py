@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/input', methods=['POST'])
+@app.route('/input/', methods=['POST'])
 def input():
 
     if request.method == 'POST':
@@ -24,6 +24,8 @@ def input():
         return render_template('input.html' , usuario=usuario , tipoAnalisis=tipoAnalisis)
 
 app.config["FILES_UPLOADS"] = "static/files"
+
+
 tagDict = {
     'CC':'coordinating', #conjunction 	and
     'CD':'cardinal', #number 	1, third
@@ -62,7 +64,7 @@ tagDict = {
     'WRB':'wh-abverb'
 }
 
-@app.route('/proced', methods=['POST'])
+@app.route('/proced/', methods=['POST'])
 def proced():
     if request.method == 'POST':
 
