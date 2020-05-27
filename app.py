@@ -83,7 +83,7 @@ def proced():
                     text = textFile.read()
                     text = normalize('NFC', text)
                 return text
-        #Uso a funcion para simplificar la llamada a la libreria TextBlob            
+        # Uso giveMeText para simplificar la llamada a la libreria TextBlob
         texto = giveMeText(elecc)
         # Llamo a la mi clase donde imlemento la libreria TextBlob
         # en mi clase tengo los metodos de la libreria definidos como atributos del texto
